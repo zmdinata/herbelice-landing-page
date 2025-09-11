@@ -1,0 +1,502 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #1a1a19;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #484744;
+}
+
+/* Navbar */
+.navbar {
+    background-color: transparent; /* Diubah menjadi transparan */
+    padding: 15px 0;
+    position: fixed; /* Diubah dari sticky menjadi fixed */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease; /* Transisi halus */
+}
+
+/* Style untuk Navbar SETELAH di-scroll */
+.navbar.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Mengubah warna logo awal menjadi putih */
+.navbar .logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff; 
+    transition: color 0.4s ease;
+}
+
+/* Mengembalikan warna logo setelah di-scroll */
+.navbar.scrolled .logo {
+    color: #d7a700; 
+}
+
+.navbar .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+/* Mengubah warna link awal menjadi putih */
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Mengembalikan warna link setelah di-scroll */
+.navbar.scrolled .nav-links a {
+    color: #333;
+}
+
+/* Efek hover khusus saat navbar sudah di-scroll */
+.navbar.scrolled .nav-links a:hover {
+    color: #d7a700;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: #d7a700;
+    color: white;
+    padding: 80px 0;
+}
+
+.hero-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    padding-right: 40px;
+    text-align: left;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: right;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* About Us Section */
+.about-section {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.about-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    padding-right: 40px;
+}
+
+.about-image img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 50%; /* For a circular logo if desired */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.about-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.about-content h2 {
+    text-align: left;
+    font-size: 36px;
+    color: #d7a700;
+}
+
+.about-content p {
+    margin-bottom: 30px;
+}
+
+/* Catalog Section */
+.catalog-section {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.catalog-section h2 {
+    color: #d7a700;
+    font-size: 36px;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.catalog-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.catalog-item {
+    min-width: 33.33%; /* Show 3 items at a time */
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+}
+
+.catalog-item img {
+    max-width: 100%;
+    height: 250px; /* Fixed height for consistent look */
+    object-fit: contain; /* Maintain aspect ratio */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.catalog-item h3 {
+    font-size: 20px;
+    color: #333;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(215, 167, 0, 0.7);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 20px;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #d7a700;
+}
+
+
+/* Review Section */
+.review-section {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.review-section h2 {
+    color: #d7a700;
+    font-size: 36px;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.review-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.reviewer-avatar {
+    width: 70px;
+    height: 70px;
+    background-color: #d7a700; /* Placeholder for avatar */
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+    /* You can use an image here instead of a solid color */
+    background-image: url('https://via.placeholder.com/70'); /* Placeholder image */
+    background-size: cover;
+    background-position: center;
+}
+
+.review-card h3 {
+    color: #d7a700;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.review-card .product-reviewed {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.review-card .stars {
+    color: #d7a700;
+    font-size: 18px;
+}
+
+/* Location Section */
+.location-section {
+    background-color: #d7a700;
+    padding: 80px 0;
+    text-align: center;
+    color: white;
+}
+
+.location-section h2 {
+    color: white;
+    font-size: 36px;
+}
+
+.map-container {
+    margin-top: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.map-container iframe {
+    border-radius: 8px;
+}
+
+/* Contact Us Section */
+.contact-section {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: #d7a700;
+    font-size: 36px;
+}
+
+.contact-links {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.contact-links .social-icon {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-links .social-icon:hover {
+    background-color: #e0e0e0;
+    color: #d7a700;
+    transform: translateY(-3px);
+}
+
+.contact-links .social-icon i {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.contact-links .social-icon img {
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .navbar .nav-links {
+        display: none; /* Hide for smaller screens, implement a hamburger menu if needed */
+    }
+
+    .hero-section .container,
+    .about-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content, .about-content {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .hero-image, .about-image {
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .hero-image img, .about-image img {
+        max-width: 80%;
+    }
+
+    .hero-content h1, .about-content h2 {
+        text-align: center;
+    }
+
+    .catalog-item {
+        min-width: 50%; /* Show 2 items on medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar .logo {
+        font-size: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p, .about-content p {
+        font-size: 16px;
+    }
+
+    .catalog-item {
+        min-width: 100%; /* Show 1 item on small screens */
+    }
+
+    .slider-btn {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-links .social-icon {
+        width: 100%;
+        justify-content: center;
+    }
+}
